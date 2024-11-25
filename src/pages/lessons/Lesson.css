@@ -1,0 +1,23 @@
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Make the lesson content look more like a title */
+.lesson-content {
+    font-size: 24px;
+    /* Increase font size to make it stand out */
+    font-weight: bold;
+    /* Bold the text */
+    text-align: center;
+    /* Center the title */
+    margin: 15px 0;
+    /* Add some space above and below the content */
+    color: #ffffff;
+    /* You can adjust the color to make it more prominent */
+    text-transform: uppercase;
+    /* Optional: make the text uppercase */
+}

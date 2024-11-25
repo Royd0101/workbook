@@ -1,0 +1,154 @@
+/* Header Image */
+.header-image {
+    width: 100%;
+    height: auto;
+}
+
+.custom-header-toolbar {
+    padding: 0;
+}
+
+/* Title */
+.ion-card-title {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5px 0;
+    color: white;
+}
+
+/* Lesson Cards */
+.lesson-card {
+    margin: 15px;
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+    /* Increased padding for a more spacious layout */
+    position: relative;
+    /* For positioning interactive quiz under the card */
+}
+
+.lesson-card-content {
+    display: flex;
+    align-items: center;
+    /* Vertically center the number and text */
+}
+
+.lesson-content {
+    font-size: 0.75rem;
+    /* Smaller font size */
+    color: black;
+    line-height: 1.2;
+    /* Adjust line height for better readability */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Interactive Quiz Button */
+.interactive-quiz-wrapper {
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    /* Add space before and after the quiz */
+}
+
+.interactive-quiz {
+    background-color: yellow;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    width: 80%;
+    max-width: 350px;
+    margin: 0 auto;
+    /* Center the quiz button */
+}
+
+/* Color schemes for the cards */
+.yellow-card {
+    background-color: #da7e97;
+}
+
+.red-card {
+    background-color: #e63946;
+}
+
+.green-card {
+    background-color: #00a676;
+}
+
+.blue-card {
+    background-color: #457b9d;
+}
+
+/* Bottom Row (Scores and History) */
+.bottom-row {
+    margin-top: 30px;
+}
+
+/* Styles for the custom cards */
+.custom-card {
+    width: 120px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #def2fa;
+    /* Light blue background */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+/* Score Card */
+.score-card .card-icon {
+    color: #d62828;
+    /* Red for scores */
+}
+
+.score-card .card-text {
+    color: #000;
+    font-family: 'Fredoka One', cursive;
+    /* Font similar to the image */
+    font-size: 1.2rem;
+}
+
+/* History Card */
+.history-card .card-icon {
+    color: #457b9d;
+    /* Green/Blue for history */
+}
+
+.history-card .card-text {
+    color: #000;
+    font-family: 'Fredoka One', cursive;
+    /* Font similar to the image */
+    font-size: 1.2rem;
+}
+
+.card-text {
+    margin: 0;
+}
+
+.card-icon {
+    font-size: 2rem;
+    /* Adjust size as necessary */
+    margin-bottom: 8px;
+}
+
+/* Icon colors if needed */
+.score-card .card-icon {
+    color: #d62828;
+    /* Red for scores */
+}
+
+.history-card .card-icon {
+    color: #457b9d;
+    /* Blue for history */
+}

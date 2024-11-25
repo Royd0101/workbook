@@ -1,0 +1,13 @@
+/* theme/variables.css */
+
+/* Light mode settings */
+:root {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+}
+
+/* Dark mode settings */
+:root.dark {
+    --ion-background-color: #000000;
+    --ion-text-color: #ffffff;
+}

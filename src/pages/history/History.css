@@ -1,0 +1,38 @@
+/* src/pages/lessons/Lessons.css */
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    /* Space between title and card */
+}
+
+/* src/pages/History.css */
+
+.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.history-card {
+    margin-bottom: 15px;
+}
+
+.lesson-content {
+    text-align: center;
+    font-size: 18px;
+}
+
+.custom-header-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+.header-image {
+    height: 50px;
+}

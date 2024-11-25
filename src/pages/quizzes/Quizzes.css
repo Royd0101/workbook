@@ -1,0 +1,21 @@
+.lesson-content {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    /* Center text */
+}
+
+.lesson-list-card {
+    background-color: azure;
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100px;
+    /* Adjust height as needed */
+    margin: 10px 0;
+    /* Optional margin for spacing */
+}

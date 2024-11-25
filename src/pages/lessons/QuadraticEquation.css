@@ -1,0 +1,70 @@
+.card {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.pdf-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* For positioning the arrows */
+    padding: 0;
+    overflow-y: auto;
+}
+
+.pdf-container canvas {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Arrow button styling */
+/* Remove arrow button styles */
+.arrow-button {
+    display: none;
+}
+
+.pdf-info {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Scrollbar styles for better UX */
+.pdf-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pdf-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* On smaller screens (like mobile) */
+@media (max-width: 768px) {
+    .card {
+        margin: 10px, 10px, 10px, 10px;
+    }
+
+    .pdf-container {
+        height: 100vh;
+    }
+
+    .pdf-info {
+        font-size: 16px;
+    }
+
+}

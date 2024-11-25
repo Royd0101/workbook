@@ -1,0 +1,12 @@
+/* SplashScreen.css */
+.splash-screen-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.splash-image {
+    max-width: 80%;
+    height: auto;
+}
