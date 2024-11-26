@@ -1,31 +1,48 @@
-/* src/pages/lessons/Lessons.css */
-
-.page-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    /* Space between title and card */
-}
-
 /* src/pages/History.css */
 
+/* Background for the entire page */
+/* Background for the entire page */
+.ion-page {
+    background-image: url('/assets/img/background.png') !important; /* Replace with your image path */
+    background-size: cover !important; /* Ensures the image covers the entire page */
+    background-position: center center !important; /* Centers the background */
+    background-attachment: fixed !important; /* Keeps the background fixed during scrolling */
+    min-height: 100vh !important; /* Ensures the background spans the full height */
+    display: flex !important;
+    flex-direction: column !important; /* Aligns child elements vertically */
+}
+
+/* Transparent content area */
+.ion-content {
+    background: transparent !important; /* Force removal of default Ionic background */
+}
+
+
+/* Title styling */
 .page-title {
-    text-align: center;
-    margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px; /* Adds space between the title and cards */
 }
 
+/* History card styling */
 .history-card {
     margin-bottom: 15px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+    padding: 15px; /* Internal padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for better readability */
 }
 
+/* Centered text for 'No history available' */
 .lesson-content {
     text-align: center;
     font-size: 18px;
+    color: #555; /* Subtle gray for contrast */
 }
 
+/* Header bar styling */
 .custom-header-toolbar {
     display: flex;
     justify-content: center;
@@ -33,6 +50,20 @@
     background-color: #f8f8f8;
 }
 
+/* Header image styling */
 .header-image {
     height: 50px;
+    object-fit: contain; /* Scales the image while maintaining aspect ratio */
+}
+
+/* Button styling for "Clear History" */
+ion-button[color="danger"] {
+    margin-top: 20px;
+    align-self: center; /* Center the button */
+    --background: #e63946; /* Custom red for the button */
+    --background-hover: #d62828; /* Darker red for hover effect */
+    --color: white; /* White text */
+    padding: 10px 20px; /* Spacing inside the button */
+    border-radius: 5px; /* Rounded edges */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }

@@ -1,16 +1,28 @@
-// pages/History.tsx
-
 import React, { useEffect, useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton } from '@ionic/react';
+import {
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonToolbar,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardContent,
+    IonButton,
+} from '@ionic/react';
 import { Activity } from '../../types/activity';
 import { getActivities, clearActivities } from '../../utils/ActivityStorage';
+import './History.css';
+
 const History: React.FC = () => {
     const [activities, setActivities] = useState<Activity[]>([]);
 
     useEffect(() => {
         const fetchedActivities = getActivities();
         // Sort activities by timestamp descending
-        const sortedActivities = fetchedActivities.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+        const sortedActivities = fetchedActivities.sort(
+            (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+        );
         setActivities(sortedActivities);
     }, []);
 
@@ -20,17 +32,18 @@ const History: React.FC = () => {
     };
 
     return (
-        <IonPage>
+        <IonPage className="ion-page">
+            {/* Header */}
             <IonHeader>
                 <IonToolbar className="custom-header-toolbar">
                     <img src="/assets/img/header.png" alt="Fun Learning" className="header-image" />
                 </IonToolbar>
             </IonHeader>
-            <IonContent className="ion-padding">
-                {/* Title at the top */}
+
+            {/* Content */}
+            <IonContent className="ion-content ion-padding">
                 <h1 className="page-title">History</h1>
 
-                {/* Check if there are activities */}
                 {activities.length === 0 ? (
                     <p className="lesson-content">No history available.</p>
                 ) : (

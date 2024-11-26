@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { checkmarkCircle, globe } from 'ionicons/icons';
 import { Activity, ActivityType } from '../types/activity';
 import { addActivity } from '../utils/ActivityStorage';
+
 const Home: React.FC = () => {
   const history = useHistory();
 
@@ -24,7 +25,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <IonPage>
+    <IonPage className="ion-page">
       {/* Header with Image */}
       <IonHeader>
         <IonToolbar className="custom-header-toolbar">
@@ -32,7 +33,7 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen className="ion-padding">
+      <IonContent fullscreen className="ion-content ion-padding">
         {/* Title Card */}
         <IonCardTitle className="ion-card-title title-text">CONTENT</IonCardTitle>
 
@@ -54,7 +55,6 @@ const Home: React.FC = () => {
           </div>
 
           {/* Repeat similar changes for other lesson cards */}
-          {/* Example for another lesson card */}
           <IonCard
             className="lesson-card red-card"
             onClick={() => handleClick('/anotherLessonPath', 'Describing the Relationship between the coefficients and the sum and product of the roots of a Quadratic Equation. (M9AL-Ic-2)', 'Lesson View')}
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
           </IonCard>
 
           <div className="interactive-quiz-wrapper">
-            <p className="interactive-quiz" >Interactive Quiz</p>
+            <p className="interactive-quiz">Interactive Quiz</p>
           </div>
 
           <IonCard className="lesson-card green-card">
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
           </IonCard>
 
           <div className="interactive-quiz-wrapper">
-            <p className="interactive-quiz" >Interactive Quiz</p>
+            <p className="interactive-quiz">Interactive Quiz</p>
           </div>
 
           <IonCard className="lesson-card blue-card">
@@ -85,9 +85,8 @@ const Home: React.FC = () => {
           </IonCard>
 
           <div className="interactive-quiz-wrapper">
-            <p className="interactive-quiz" >Interactive Quiz</p>
+            <p className="interactive-quiz">Interactive Quiz</p>
           </div>
-
 
           <IonRow className="ion-justify-content-center ion-align-items-center bottom-row">
             <IonCol size="6" sizeSm="4">

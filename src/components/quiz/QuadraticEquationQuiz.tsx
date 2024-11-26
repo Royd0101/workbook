@@ -53,7 +53,7 @@ const questions: Question[] = [
         id: 5,
         instruction: 'A. Transform to a better form!',
         question: 'Identify the correct transformation of Quadratic Equation into the General form. Choose the letter of the correct answer.',
-        number: '5. 5x2 + 3x = 6x – 1',
+        number: '5. 5x<sup>2</sup> + 3x = 6x – 1',
         options: ['A. 5x<sup>2</sup>+3x+6x–1=6x–1+6x–1 → 5x<sup>2</sup>+9x–1 = 0', 'B.  5x<sup>2</sup>+3x–6x+1=6x–1 – 6x+1 → 5x<sup>2</sup>–3x+1 = 0'],
         answer: 'A. 5x<sup>2</sup>+3x+6x–1=6x–1+6x–1 → 5x<sup>2</sup>+9x–1 = 0'
     },
@@ -101,7 +101,7 @@ const questions: Question[] = [
         id: 11,
         instruction: 'C. Write whats right!',
         question: 'Evaluate the Discriminant (D = 𝑏<sup>2</sup> − 4𝑎𝑐) of the Quadratic Equation. Choose the letter of the correct answer.',
-        number: '1. 2x<sup>2</sup> – x – 1 = 0 where <br /> a = 2, b = -1, c = -1',
+        number: '1. 2x<sup>2</sup> – x – 1 = 0 <br /> a = 2, b = -1, c = -1',
         options: [
             'A.<br /> D = b<sup>2</sup> - 4ac<br />D = (-1)<sup>2</sup> - 4(2)(-1)<br />D = 1 - (-8)<br />D = 1 + 8<br />D = 9',
             'B.<br /> D = b<sup>2</sup> - 4ac<br />D = 2<sup>2</sup> - 4(-1)(-1)<br />D = 4 - 4<br />D = 0'
@@ -111,25 +111,132 @@ const questions: Question[] = [
     {
         id: 12,
         instruction: 'C. Write whats right!',
-        question: 'Identify the values of a, b and c of the Quadratic Equation. Choose the letter of the correct answer.',
+        question: 'Evaluate the Discriminant (D = 𝑏<sup>2</sup> − 4𝑎𝑐) of the Quadratic Equation. Choose the letter of the correct answer.',
         number: '2. x<sup>2</sup> + 7x + 5 = 0 <br /> a = 1, b = 7, c = 5',
         options: [
-            'A.<br /> D= b2-4ac <br /> D= 1 2-4(7)(5) <br /> D= 1-140 <br /> D= -139',
-            'B.<br /> D= b2-4ac <br /> D= 7 2-4(1)(5)  <br /> D= 49-20 <br /> D= 29'
+            'A.<br /> D= b<sup>2</sup>-4ac <br /> D= 1 2-4(7)(5) <br /> D= 1-140 <br /> D= -139',
+            'B.<br /> D= b<sup>2</sup>-4ac <br /> D= 7<sup>2</sup>-4(1)(5)  <br /> D= 49-20 <br /> D= 29'
         ],
-        answer: 'A.<br /> D= b2-4ac <br /> D= 1 2-4(7)(5) <br /> D= 1-140 <br /> D= -139'
+        answer: 'A.<br /> D= b<sup>2</sup>-4ac <br /> D= 1 2-4(7)(5) <br /> D= 1-140 <br /> D= -139'
     },
     {
         id: 13,
         instruction: 'C. Write whats right!',
-        question: 'Identify the values of a, b and c of the Quadratic Equation. Choose the letter of the correct answer.',
+        question: 'Evaluate the Discriminant (D = 𝑏<sup>2</sup> − 4𝑎𝑐) of the Quadratic Equation. Choose the letter of the correct answer.',
         number: '3. 2x<sup>2</sup> – 8x + 8 = 0 <br /> a = 2, b = -8, c = 8',
         options: [
-            'A.<br /> D= b2-4ac <br /> D= 8 2-4(2)(8) <br /> D= 16-64 <br /> D= -48',
-            'B.<br /> D= b2-4ac <br /> D= (-8)2-4(2)(8)  <br /> D= 64-64 <br /> D= 0'
+            'A.<br /> D= b<sup>2</sup>-4ac <br /> D= 8<sup>2</sup>-4(2)(8) <br /> D= 16-64 <br /> D= -48',
+            'B.<br /> D= b<sup>2</sup>-4ac <br /> D= (-8)<sup>2</sup>-4(2)(8)  <br /> D= 64-64 <br /> D= 0'
         ],
-        answer: 'B.<br /> D= b2-4ac <br /> D= (-8)2-4(2)(8)  <br /> D= 64-64 <br /> D= 0'
+        answer: 'B.<br /> D= b<sup>2</sup>-4ac <br /> D= (-8)<sup>2</sup>-4(2)(8)  <br /> D= 64-64 <br /> D= 0'
+    },
+    {
+        id: 14,
+        instruction: 'C. Write whats right!',
+        question: 'Evaluate the Discriminant (D = 𝑏<sup>2</sup> − 4𝑎𝑐) of the Quadratic Equation. Choose the letter of the correct answer.',
+        number: '4. -x<sup>2</sup> – 4x - 5 = 0 <br /> a = -1, b = -4, c = -5',
+        options: [
+            'A.<br /> D= b<sup>2</sup>-4ac <br /> D= (-1)<sup>2</sup>-4(-4)(-5) <br /> D= 1-80 <br /> D= -79',
+            'B.<br /> D= b<sup>2</sup>-4ac <br /> D= (-4)<sup>2</sup>-4(-4)(-5)  <br /> D= 16-20 <br /> D= -4'
+        ],
+        answer: 'B.<br /> D= b<sup>2</sup>-4ac <br /> D= (-4)<sup>2</sup>-4(-4)(-5)  <br /> D= 16-20 <br /> D= -4'
+    },
+    {
+        id: 15,
+        instruction: 'C. Write whats right!',
+        question: 'Evaluate the Discriminant (D = 𝑏<sup>2</sup> − 4𝑎𝑐) of the Quadratic Equation. Choose the letter of the correct answer.',
+        number: '5. 5x<sup>2</sup> – 3x + 1 = 0 <br /> a = 5, b = -3, c = 1',
+        options: [
+            'A.<br /> D= b<sup>2</sup>-4ac <br /> D= (-3)<sup>2</sup>-4(5)(0) <br /> D= 9-0 <br /> D= 9',
+            'B.<br /> D= b<sup>2</sup>-4ac <br /> D= (-3)<sup>2</sup>-4(5)(1)  <br /> D= 9-20 <br /> D= -11'
+        ],
+        answer: 'B.<br /> D= b<sup>2</sup>-4ac <br /> D= (-3)<sup>2</sup>-4(5)(1)  <br /> D= 9-20 <br /> D= -11'
+    },
+    {
+        id: 16,
+        instruction: 'D. Ensure your nature!',
+        question: 'Characterize the roots of the Quadratic Equation using its discriminant. Choose the letter of the correct answer.',
+        number: '1. 2x<sup>2</sup> – x - 1 = 0 ; D = 9',
+        options: [
+            'A.<br /> Since D = 9, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
+            'B.<br /> Since D = 9, then  <br /> D < 0, <br /> therefore, the roots are Real and Equal',
+            'C.<br /> Since D = 9, then  <br /> D < 0, <br /> therefore, the roots are Rational and Unequal',
+            'D.<br /> Since D = 9, then  <br /> D < 0, <br /> therefore, the roots are Irrational and Unequal',
+
+        ],
+        answer: 'C.<br /> Since D = 9, then  <br /> D < 0, <br /> therefore, the roots are Rational and Unequal',
+    },
+    {
+        id: 17,
+        instruction: 'D. Ensure your nature!',
+        question: 'Characterize the roots of the Quadratic Equation using its discriminant. Choose the letter of the correct answer.',
+        number: '2. x<sup>2</sup> + 7x + 5 = 0 ; D = 29',
+        options: [
+            'A.<br /> Since D = 29, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
+            'B.<br /> Since D = 29, then  <br /> D = 0, <br /> therefore, the roots are Real and Equal',
+            'C.<br /> Since D = 29, <br /> D > 0 and is <br /> a perfect square, <br /> therefore, the roots are Rational and Unequal',
+            'D.<br /> Since D = 29, <br /> D > 0 and is <br /> Not a perfect square, <br /> therefore, the roots are Irrational and Unequal',
+
+        ],
+        answer: 'D.<br /> Since D = 29, <br /> D > 0 and is, <br /> Not a perfect square, <br /> therefore, the roots are Irrational and Unequal',
+    },
+    {
+        id: 18,
+        instruction: 'D. Ensure your nature!',
+        question: 'Characterize the roots of the Quadratic Equation using its discriminant. Choose the letter of the correct answer.',
+        number: '3. 2x<sup>2</sup> - 8x + 8 = 0 ; D = 0',
+        options: [
+            'A.<br /> Since D = 0, then  <br /> D > 0, <br /> therefore, the roots are Imaginary/Complex',
+            'B.<br /> Since D = 0, then  <br /> D = 0, <br /> therefore, the roots are Real and Equal',
+            'C.<br /> Since D = 0, <br /> D > 0 and is <br /> a perfect square, <br /> therefore, the roots are Rational and Unequal',
+            'D.<br /> Since D = 0, <br /> D > 0 and is <br /> Not a perfect square, <br /> therefore, the roots are Irrational and Unequal',
+
+        ],
+        answer: 'B.<br /> Since D = 0, then  <br /> D = 0, <br /> therefore, the roots are Real and Equal',
+    },
+    {
+        id: 19,
+        instruction: 'D. Ensure your nature!',
+        question: 'Characterize the roots of the Quadratic Equation using its discriminant. Choose the letter of the correct answer.',
+        number: '4. -x<sup>2</sup> - 4x + -5 = 0 ; D = -4',
+        options: [
+            'A.<br /> Since D = -4, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
+            'B.<br /> Since D = -4, then  <br /> D = 0, <br /> therefore, the roots are Real and Equal',
+            'C.<br /> Since D = -4, <br /> D > 0 and is <br /> a perfect square, <br /> therefore, the roots are Rational and Unequal',
+            'D.<br /> Since D = -4, <br /> D > 0 and is <br /> Not a perfect square, <br /> therefore, the roots are Irrational and Unequal',
+
+        ],
+        answer: 'A.<br /> Since D = -4, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
+    },
+    {
+        id: 20,
+        instruction: 'D. Ensure your nature!',
+        question: 'Characterize the roots of the Quadratic Equation using its discriminant. Choose the letter of the correct answer.',
+        number: '5. 5x<sup>2</sup> - 4x + 1 = 0 ; D = -11',
+        options: [
+            'A.<br /> Since D = -4, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
+            'B.<br /> Since D = -4, then  <br /> D = 0, <br /> therefore, the roots are Real and Equal',
+            'C.<br /> Since D = -4, <br /> D > 0 and is <br /> a perfect square, <br /> therefore, the roots are Rational and Unequal',
+            'D.<br /> Since D = -4, <br /> D > 0 and is <br /> Not a perfect square, <br /> therefore, the roots are Irrational and Unequal',
+
+        ],
+        answer: 'A.<br /> Since D = -4, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
+    },
+    {
+        id: 21,
+        instruction: 'II. You are smart independent!',
+        question: 'Characterize the roots of the Quadratic Equation using its discriminant. Type in the value of the discriminant and select the letter that best describes the nature of the roots. Input your answer for the discriminant and choose the letter of its correct characteristic.​',
+        number: '1. 4x<sup>2</sup> + x - 1 , D = ______',
+        options: [
+            'A.<br /> Since D = -4, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
+            'B.<br /> Since D = -4, then  <br /> D = 0, <br /> therefore, the roots are Real and Equal',
+            'C.<br /> Since D = -4, <br /> D > 0 and is <br /> a perfect square, <br /> therefore, the roots are Rational and Unequal',
+            'D.<br /> Since D = -4, <br /> D > 0 and is <br /> Not a perfect square, <br /> therefore, the roots are Irrational and Unequal',
+
+        ],
+        answer: 'A.<br /> Since D = -4, then  <br /> D < 0, <br /> therefore, the roots are Imaginary/Complex',
     }
+
 
 
 ];
@@ -218,7 +325,7 @@ const Quiz: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="whole-body">
             <IonHeader>
                 <IonToolbar className="custom-header-toolbar">
                     <img src="/assets/img/header.png" alt="Fun Learning" className="header-image" />
@@ -229,7 +336,7 @@ const Quiz: React.FC = () => {
                 questions.map((q, index) => (
                     <div key={q.id} style={{ marginBottom: '20px' }}>
                         {currentQuestionIndex === index && (
-                            <IonCard>
+                            <IonCard className="body-card">
                                 <IonCardHeader className="text-title">
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                         {/* Circle with the number */}
@@ -276,6 +383,7 @@ const Quiz: React.FC = () => {
                                     <div className="instruction-container">
                                         <IonCardTitle
                                             className="instruction-text"
+                                            style={{ fontStyle: 'italic' }}
                                             dangerouslySetInnerHTML={{ __html: q.instruction }}
                                         />
                                     </div>

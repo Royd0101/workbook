@@ -1,7 +1,16 @@
-/* Header Image */
+.ion-content {
+    --background: none !important; /* Removes Ionic's default background */
+    background-image: url('/assets/img/background.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+}
+
+
 .header-image {
     width: 100%;
-    height: auto;
+    height: 80px; /* Set a fixed height for the header image */
+    object-fit: cover;
 }
 
 .custom-header-toolbar {
@@ -52,7 +61,7 @@
 }
 
 .interactive-quiz {
-    background-color: yellow;
+    background-color: #FFD93D;
     color: black;
     padding: 10px;
     border-radius: 5px;
@@ -65,20 +74,21 @@
 
 /* Color schemes for the cards */
 .yellow-card {
-    background-color: #da7e97;
+    background-color: #f7cbd7; /* Lighter pinkish yellow */
 }
 
 .red-card {
-    background-color: #e63946;
+    background-color: #f28b82; /* Light coral red */
 }
 
 .green-card {
-    background-color: #00a676;
+    background-color: #a6e9cd; /* Light pastel green */
 }
 
 .blue-card {
-    background-color: #457b9d;
+    background-color: #89b8de; /* Light pastel blue */
 }
+
 
 /* Bottom Row (Scores and History) */
 .bottom-row {
