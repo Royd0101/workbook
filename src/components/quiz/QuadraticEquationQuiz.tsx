@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonHeader, IonToolbar, IonTitle, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/react';
+import { IonHeader, IonToolbar, IonTitle, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonToast } from '@ionic/react';
 import './QuadraticEquationQuiz.css';
 import { Activity } from '../../types/activity';
 import { addActivity } from '../../utils/ActivityStorage';
@@ -252,68 +252,56 @@ const Quiz: React.FC = () => {
         const question = questions[currentQuestionIndex];
         const isCorrect = option === question.answer;
 
-        // Update the answer array
-        setAnswers(prevAnswers => {
+        setAnswers((prevAnswers) => {
             const newAnswers = [...prevAnswers];
             newAnswers[currentQuestionIndex] = option;
             return newAnswers;
         });
 
-        // Handle feedback and score
         if (isCorrect) {
-            setScore(prevScore => prevScore + 1); // Increment score
+            setScore((prevScore) => prevScore + 1);
             setFeedback('Correct answer!');
         } else {
             setFeedback('Wrong answer!');
         }
 
-        // Move to the next question or show results if finished
-        if (currentQuestionIndex < questions.length - 1) {
-            setTimeout(() => {
-                setFeedback(null);
-                setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                setFeedback(null);
+        setTimeout(() => {
+            setFeedback(null); // Clear feedback after toast duration
+            if (currentQuestionIndex < questions.length - 1) {
+                setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+            } else {
                 setShowResults(true);
-            }, 1000);
-            const quizTitle = "Characterizing the roots of a Quadratic Equation using the Discriminant. (M9AL-Ic-1)";
-            const newActivity: Activity = {
-                id: Date.now(),
-                type: 'Quiz Taken',
-                title: quizTitle,
-                timestamp: new Date().toISOString(),
-            };
-            addActivity(newActivity);
-        }
+                addActivity({
+                    id: Date.now(),
+                    type: 'Quiz Taken',
+                    title: 'Characterizing the roots of a Quadratic Equation',
+                    timestamp: new Date().toISOString(),
+                });
+            }
+        }, 1000);
     };
 
     // Use useEffect to trigger the saveScore only when showResults is true
     useEffect(() => {
         if (showResults) {
-            saveScore(score); // Pass the final score
+            saveScore(score);
         }
-    }, [showResults, score]); // Dependency on showResults and score
+    }, [showResults, score]);
 
     const saveScore = (finalScore: number) => {
-        const quizTitle = "Characterizing the roots of a Quadratic Equation using the Discriminant. (M9AL-Ic-1)"; // Example quiz title
         const existingScores = JSON.parse(localStorage.getItem('quizScores') || '[]');
-
         const newScore = {
-            title: quizTitle,
+            title: 'Characterizing the roots of a Quadratic Equation',
             score: finalScore,
             maxScore: questions.length,
             answers: questions.map((q, index) => ({
                 question: q.question,
-                userAnswer: answers[index],   // Capture the user's selected answer
-                correctAnswer: q.answer       // Capture the correct answer
-            }))
+                userAnswer: answers[index],
+                correctAnswer: q.answer,
+            })),
         };
 
-        const newScores = [...existingScores, newScore];
-        localStorage.setItem('quizScores', JSON.stringify(newScores));
-        console.log(`Saved score object:`, newScore);
+        localStorage.setItem('quizScores', JSON.stringify([...existingScores, newScore]));
     };
 
     const handleRetakeQuiz = () => {
@@ -334,85 +322,88 @@ const Quiz: React.FC = () => {
 
             {!showResults ? (
                 questions.map((q, index) => (
-                    <div key={q.id} style={{ marginBottom: '20px' }}>
+                    <div key={q.id}>
                         {currentQuestionIndex === index && (
                             <IonCard className="body-card">
-                                <IonCardHeader className="text-title">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                        {/* Circle with the number */}
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                width: '40px',
-                                                height: '50px',
-                                                borderRadius: '50%',
-                                                backgroundColor: '#F3C623', // Yellow background
-                                                color: '#000', // Black text
-                                                fontWeight: 'bold',
-                                                fontSize: '16px',
-                                                textAlign: 'center',
-                                            }}
-                                        >
-                                            1.
-                                        </div>
-                                        {/* Text next to the circle */}
-                                        <IonCardTitle className="text-title">
-                                            Characterizing the roots of a Quadratic Equation using the Discriminant
-                                        </IonCardTitle>
+                            <IonCardHeader className="text-title">
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    {/* Circle with the number */}
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            width: '40px',
+                                            height: '50px',
+                                            borderRadius: '50%',
+                                            backgroundColor: '#F3C623',
+                                            color: '#000',
+                                            fontWeight: 'bold',
+                                            fontSize: '16px',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                       1.
                                     </div>
-                                </IonCardHeader>
-
-                                <IonCardHeader>
-                                    <div className="instruction-container">
-                                        <IonCardTitle className="instruction-text">
-                                            <strong>Exercises:</strong>
-                                        </IonCardTitle>
-                                    </div>
-                                </IonCardHeader>
-                                <IonCardHeader>
-                                    <div className="instruction-container">
-                                        <IonCardTitle className="instruction-text">
-                                            <strong>l. Let's do this together!</strong>
-                                        </IonCardTitle>
-                                    </div>
-                                </IonCardHeader>
-
-                                <IonCardHeader>
-                                    <div className="instruction-container">
-                                        <IonCardTitle
-                                            className="instruction-text"
-                                            style={{ fontStyle: 'italic' }}
-                                            dangerouslySetInnerHTML={{ __html: q.instruction }}
-                                        />
-                                    </div>
-                                </IonCardHeader>
-                                <IonCardHeader>
+                                    {/* Text next to the circle */}
+                                    <IonCardTitle className="text-title">
+                                        Characterizing the roots of a Quadratic Equation using the Discriminant
+                                    </IonCardTitle>
+                                </div>
+                            </IonCardHeader>
+                        
+                            <IonCardHeader>
+                                <div className="instruction-container">
+                                    <IonCardTitle className="instruction-text">
+                                        <strong>Exercises:</strong>
+                                    </IonCardTitle>
+                                </div>
+                            </IonCardHeader>
+                        
+                            <IonCardHeader>
+                                <div className="instruction-container">
+                                    <IonCardTitle className="instruction-text">
+                                        <strong>l. Let's do this together!</strong>
+                                    </IonCardTitle>
+                                </div>
+                            </IonCardHeader>
+                        
+                            <IonCardHeader>
+                                <div className="instruction-container">
                                     <IonCardTitle
-                                        className="question-text"
-                                        dangerouslySetInnerHTML={{ __html: q.question }} />
-                                </IonCardHeader>
-                                <IonCardHeader className="number-card">
-                                    <IonCardTitle
-                                        className="number-title"
-                                        dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex].number }}
+                                        className="instruction-text"
+                                        style={{ fontStyle: 'italic' }}
+                                        dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex].instruction }}
                                     />
-                                </IonCardHeader>
-                                <IonCardContent>
-                                    {questions[currentQuestionIndex].options.map(option => (
-                                        <IonButton
-                                            key={option}
-                                             className="select-button"
-                                            expand="full"
-                                            onClick={() => handleAnswerClick(option)}
-                                        >
-                                            <span dangerouslySetInnerHTML={{ __html: option }} className="small-bold-text" />
-                                        </IonButton>
-                                    ))}
-                                </IonCardContent>
-
-                            </IonCard>
+                                </div>
+                            </IonCardHeader>
+                            <IonCardHeader>
+                                <IonCardTitle
+                                    className="question-text"
+                                    dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex].question }}
+                                />
+                            </IonCardHeader>
+                            <IonCardHeader className="number-card">
+                                <IonCardTitle
+                                    className="number-title"
+                                    dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex].number }}
+                                />
+                            </IonCardHeader>
+                            <IonCardContent>
+                                {questions[currentQuestionIndex].options.map((option) => (
+                                    <IonButton
+                                        key={option}
+                                        className="select-button"
+                                        expand="full"
+                                        style={{ marginBottom: '20px' }}
+                                        onClick={() => handleAnswerClick(option)}
+                                    >
+                                        <span dangerouslySetInnerHTML={{ __html: option }} className="small-bold-text" />
+                                    </IonButton>
+                                ))}
+                            </IonCardContent>
+                        </IonCard>
+                        
                         )}
                     </div>
                 ))
@@ -450,27 +441,27 @@ const Quiz: React.FC = () => {
                             </IonCardContent>
                         </IonCard>
                     ))}
-                    <IonButton expand="full" onClick={handleRetakeQuiz}>
-                        Retake Quiz
-                    </IonButton>
+                    <div style={{ paddingBottom: '40px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                        <IonButton
+                            expand="block" // Adjust button alignment
+                            onClick={handleRetakeQuiz}
+                            style={{ marginTop: '20px', marginBottom: '20px', maxWidth: '300px' }} // Ensure proper spacing
+                        >
+                            Retake Quiz
+                        </IonButton>
+                    </div>
+
                 </div>
             )}
 
-            {feedback && (
-                <div style={{
-                    position: 'fixed',
-                    bottom: '10px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                    color: 'white',
-                    padding: '10px',
-                    borderRadius: '5px',
-                    zIndex: 1000
-                }}>
-                    {feedback}
-                </div>
-            )}
+            <IonToast
+                isOpen={!!feedback}
+                onDidDismiss={() => setFeedback(null)}
+                message={feedback}
+                duration={1000}
+                position="bottom"
+                color={feedback === 'Correct answer!' ? 'success' : 'danger'}
+            />
         </div>
     );
 };
